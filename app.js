@@ -11,6 +11,7 @@ var testimonialsRouter = require('./routes/testimonials');
 var adminPostsRouter = require('./routes/admin/posts');
 var authRouter = require('./routes/auth');
 var verifyAuth = require('./middlewares/authMiddleware');
+var adminSensorsTempRouter = require('./routes/admin/sensorsTemp'); // sensor de temperatura caminho
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use('/auth', authRouter);
 app.use('/admin/posts', [verifyAuth], adminPostsRouter);
 app.use('/users', usersRouter);
 app.use('/testimonials', testimonialsRouter);
+app.use('/admin/sensorsTemp', [verifyAuth], adminSensorsTempRouter); //verify sensor temperatura
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
