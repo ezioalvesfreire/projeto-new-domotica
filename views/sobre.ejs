@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <%- include('imports'); -%>
+    </head>
+  
+    <body>
+		
+		<%- include('navbar'); -%>
+
+        <% lista_projects.forEach((lista_projects) => { %>
+            <div class="row no-gutters">        
+                    <img class='imgSb' src="<%= `/images/${lista_projects.image}` %>" width="220">
+            
+				
+						<div class='bloco'>
+                        <h1><%= lista_projects.name %></h1>
+
+						<h1><%= lista_projects.subject %></h1>
+							<div><%= lista_projects.description %></div>
+						<h1><%= lista_projects.subject2 %></h1>
+							<div><%= lista_projects.description2 %></div>
+						</div>
+
+            </div>
+      <% }); %>
+    </body>
+</html>
