@@ -7,7 +7,7 @@ router.get('/login', function(req, res, next) {
     res.render('login', { msg: '' });
 });
 
-router.post('/login', function(req, res, next) {
+router.post('/login', function(req, res, next) { ///post do verbo HTTP
 
     var email = req.body.email;
     var password = req.body.password;
@@ -23,7 +23,7 @@ router.post('/login', function(req, res, next) {
         req.session.authenticatedUsers.push(user);
         res.cookie('loginToken', user.loginToken, { maxAge: 900000, httpOnly: true });
 
-        res.redirect('/admin/posts');
+        res.redirect('/admin/actuadors');
     }
 
 

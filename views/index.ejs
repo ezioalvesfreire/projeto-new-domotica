@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-	  <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.jpg">
     <%- include('imports'); -%>
-  </head>
-  <body>
+</head>
 
-  	<%- include('navbar'); -%>
+<body>
 
-  	<%- include('banner'); -%>
-    
-    <div class="container">
-      <div class="row">
-        <% posts.forEach((post) => { %>
-          <%- include('post_card', { post: post }); -%>
-        <% }); %>
-      </div>
-    </div>
-	  
-	<!--<div class="container">
+    <%- include('navbar'); -%>
+
+        <%- include('banner'); -%>
+
+            <div class="container">
+                <div class="row">
+                    <% actuadors.forEach((actuador) => { %>
+                        <%- include('post_card', { actuador: actuador }); -%>
+                            <% }); %>
+                </div>
+            </div>
+
+            <!--<div class="container">
       <div class="row">
         <% posts.forEach((post) => { %>
           <%- include('post_card', { post: post }); -%>
         <% }); %>
       </div>
     </div>-->
-	  
-  </body>
+
+</body>
+
 </html>

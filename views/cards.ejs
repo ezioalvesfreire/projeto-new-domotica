@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <%- include('imports'); -%>
-  </head>
-  <body>
 
-  	<%- include('navbar'); -%>
-    
-    <div class="container">
-      <div class="row">
-        <% posts.forEach((post) => { %>
-          <%- include('post_card', { post: post }); -%>
-        <% }); %>
-      </div>
-    </div>
-	  
-  </body>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <%- include('imports'); -%>
+</head>
+
+<body>
+
+    <%- include('navbar'); -%>
+
+        <div class="container">
+            <div class="row">
+                <% actuadors.forEach((actuador) => { %>
+                    <%- include('post_card', { actuador: actuador }); -%>
+                        <% }); %>
+            </div>
+        </div>
+
+</body>
+
 </html>

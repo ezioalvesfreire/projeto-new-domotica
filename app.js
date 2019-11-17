@@ -8,10 +8,10 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testimonialsRouter = require('./routes/testimonials');
-var adminPostsRouter = require('./routes/admin/posts');
+var adminActuadorsRouter = require('./routes/admin/actuadors');
 var authRouter = require('./routes/auth');
 var verifyAuth = require('./middlewares/authMiddleware');
-var adminSensorsTempRouter = require('./routes/admin/sensorsTemp'); // sensor de temperatura caminho
+var adminSensorsRouter = require('./routes/admin/sensors'); // sensor de temperatura caminho
 
 var app = express();
 
@@ -35,10 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/admin/posts', [verifyAuth], adminPostsRouter);
+app.use('/admin/actuadors', [verifyAuth], adminActuadorsRouter);
 app.use('/users', usersRouter);
 app.use('/testimonials', testimonialsRouter);
-app.use('/admin/sensorsTemp', [verifyAuth], adminSensorsTempRouter); //verify sensor temperatura
+app.use('/admin/sensors', [verifyAuth], adminSensorsRouter); //verify sensor temperatura
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
