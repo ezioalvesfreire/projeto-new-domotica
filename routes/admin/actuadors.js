@@ -32,7 +32,7 @@ router.post('/create', upload.single('image'), function(req, res, next) {
 
     actuadorsService.saveActuador(newActuador);
 
-    res.redirect('/admin/actuador'); //routes se for em services é apenas actuador - singular
+    res.redirect('/admin/actuadors'); // se for em services é apenas actuador - singular
 });
 
 module.exports = router;
