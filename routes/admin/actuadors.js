@@ -10,12 +10,12 @@ router.get('/', function(req, res, next) {
         actuadors: actuadors
     };
 
-    res.render('admin/dispositivs/index', data); // palpite views   (if routes = actuadors ou if views = dispositivs)
+    res.render('admin/dispositivs/index', data);
 });
 
 router.get('/create', function(req, res, next) {
 
-    res.render('admin/dispositivs/create'); //palpite views     (if routes = actuadors ou if views = dispositivs)
+    res.render('admin/dispositivs/create');
 });
 
 router.post('/create', upload.single('image'), function(req, res, next) {

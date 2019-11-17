@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var postsFilePath = 'db/sensors.json';
+var sensorsFilePath = 'db/sensors.json';
 
 var loadFileSensors = function() {
     var fileData = fs.readFileSync(sensorsFilePath, 'utf8');
