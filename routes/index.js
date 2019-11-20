@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var actuadorsService = require('../services/actuadorsService');
 var moviesService = require('../services/moviesService');
+var sensorsService = require('../services/sensorsService');
 //var sobreService = require('../services/sobreService');
 //var trabalheconoscoService = require('../services/trabalheconoscoService'); // trabalheconosco
 //var cardsService = require('../services/cardsService');
@@ -14,11 +15,19 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET cards page.  // são os sensores e atuadores que por fim deverão ser individualizados  */
-router.get('/cards', function(req, res, next) {
+router.get('/cardsActuador', function(req, res, next) {
     var actuadors = actuadorsService.getActuadors(); //posts
     var movies = moviesService.getProjects();
-    res.render('cards', { title: 'Meus cards', actuadors: actuadors, projects: movies });
+    res.render('cardsActuador', { title: 'Meus cards', actuadors: actuadors, projects: movies });
 });
+
+/* GET cards page.  // são os sensores que por fim sendo individualizados  */
+router.get('/cardsSensors', function(req, res, next) {
+    var sensors = sensorsService.getSensors(); //posts
+    var movies = moviesService.getProjects();
+    res.render('cardsSensors', { title: 'Meus cards', sensors: sensors, projects: movies });
+});
+
 /* não sofreu qualquer inflência ao (comentar) cancelar o codigo abaixo! */
 router.get('/actuador', function(req, res, next) {
     var actuadors = actuadorsService.getActuadors(); //posts

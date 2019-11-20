@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Posts</title>
+    <title>Sensor</title>
     <%- include('../../imports'); -%>
 </head>
 
@@ -12,28 +12,45 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Novo Post</h1>
+                    <h1>Novo dispositivo de medição</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <form action="create" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="postTitle">Título</label>
-                            <input name="title" type="text" class="form-control" id="postTitle" placeholder="Título do post">
+                            <label for="sensorTitle">Título</label>
+                            <input name="title" type="text" class="form-control" id="sensorTitle" placeholder="Título do dispositivo de medição">
                         </div>
                         <div class="form-group">
-                            <label for="postImage">Imagem</label>
-                            <input name="image" type="file" class="form-control" id="postImage" placeholder="Imagem do post">
+                            <label for="sensorImage">Imagem</label>
+                            <input name="image" type="file" class="form-control" id="sensorImage" placeholder="Imagem do dispositivo de medição">
                         </div>
-                        <div class="form-group">
-                            <label for="postDescription">Descrição</label>
-                            <textarea name="description" type="text" class="form-control" id="postDescription" placeholder=""></textarea>
+                        <div class="row">
+
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Título</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    corpo da tabela
+                                    <tr>
+                                        <td>
+                                            alguma coisa
+                                        </td>
+                                        <td>
+                                            outra coisa
+                                        </td>
+                                    </tr>
+                                    asdfasdf!
+
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="form-group">
-                            <label for="postBody">Corpo do post</label>
-                            <textarea name="postBody" type="text" class="form-control" id="postBody" placeholder=""></textarea>
-                        </div>
+
                         <button type="submit" class="btn btn-primary">Salvar</button>
                     </form>
                 </div>
