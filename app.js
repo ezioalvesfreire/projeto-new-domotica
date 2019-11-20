@@ -7,7 +7,7 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var testimonialsRouter = require('./routes/testimonials');
+//var testimonialsRouter = require('./routes/testimonials');
 var adminActuadorsRouter = require('./routes/admin/actuadors');
 var authRouter = require('./routes/auth');
 var verifyAuth = require('./middlewares/authMiddleware');
@@ -37,7 +37,7 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/admin/actuadors', [verifyAuth], adminActuadorsRouter);
 app.use('/users', usersRouter);
-app.use('/testimonials', testimonialsRouter);
+//app.use('/testimonials', testimonialsRouter);
 app.use('/admin/sensors', [verifyAuth], adminSensorsRouter); //verify sensor temperatura
 
 // catch 404 and forward to error handler

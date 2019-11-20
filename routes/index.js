@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var actuadorsService = require('../services/actuadorsService');
 var moviesService = require('../services/moviesService');
-var sobreService = require('../services/sobreService');
-var trabalheconoscoService = require('../services/trabalheconoscoService'); // trabalheconosco
+//var sobreService = require('../services/sobreService');
+//var trabalheconoscoService = require('../services/trabalheconoscoService'); // trabalheconosco
 //var cardsService = require('../services/cardsService');
 
 /* GET home page. */ // nesse caso home e Smarthome
@@ -46,17 +46,7 @@ router.get('/movies', function(req, res, next) {
     var lprojects = moviesService.getProjects()
     res.render('movies', { title: 'Meus vídeos', lista_projects: lprojects });
 });
-/* função para o projeto sobre! */
-//Mostra lista de projects no menu Projects
-router.get('/sobre', function(req, res, next) {
-    var lprojects = sobreService.getProjects()
-    res.render('sobre', { title: 'Sobre', lista_projects: lprojects });
-});
-/* função trabalhe conosco */
-//Mostra lista de vagas de emprego no menu projects
-router.get('/trabalheconosco', function(req, res, next) {
-    var lprojects = trabalheconoscoService.getTrabalheconosco()
-    res.render('trabalheconosco', { title: 'trabalheconosco', lista_projects: lprojects });
-});
+
+
 
 module.exports = router;
