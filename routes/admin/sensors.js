@@ -10,15 +10,15 @@ router.get('/', function(req, res, next) {
         sensors: sensors
     };
 
-    res.render('admin/sensors/index', data);
+    res.render('admin/dispositivs/sensor', data); // caminho para ejs  originalmente index/// possivel sensor
 });
 
-router.get('/create', function(req, res, next) {
+router.get('/createSensor', function(req, res, next) {
 
-    res.render('admin/sensors/create');
+    res.render('admin/dispositivs/createSensor');
 });
-// muadar a variavel post depois
-router.post('/create', upload.single('image'), function(req, res, next) {
+
+router.post('/createSensor', upload.single('image'), function(req, res, next) {
     var sensors = sensorsService.getSensors();
 
     var newId = sensors.length + 1;

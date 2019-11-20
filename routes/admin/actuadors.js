@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
         actuadors: actuadors
     };
 
-    res.render('admin/dispositivs/index', data);
+    res.render('admin/dispositivs/actuador', data); /// ejs nome de origem admin/dispositivs/index
 });
 
 router.get('/create', function(req, res, next) {
