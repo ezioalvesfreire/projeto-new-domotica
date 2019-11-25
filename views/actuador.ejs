@@ -10,11 +10,11 @@
 
 <body>
     <%- include('navbar'); -%>
+
         <!-- o nome de origem desta pagina é index.ejs-->
 
         <div class="container">
             <div class="row">
-
                 <div class="dispositive-detail">
                     <img src="/images/<%= actuador.image %>" />
                     <h1>
@@ -24,6 +24,7 @@
                         <%= actuador.body %>
                     </p>
                 </div>
+                <div><a href="/actuadors/<%= actuador.id %>" class="btn btn-primary">ON/OFF - <%= actuador.id %>actuador.ejs</a> </div>
 
 
             </div>

@@ -5,12 +5,12 @@ var upload = require('../../middlewares/uploaderMiddleware');
 
 router.get('/', function(req, res, next) {
     var sensors = sensorsService.getSensors();
-
-    var data = {
-        sensors: sensors
-    };
-
-    res.render('admin/dispositivs/sensor', data); // caminho para ejs  originalmente index/// possivel sensor
+    /*
+        var data = {
+            sensors: sensors
+        };
+    */ //data  por {sensors} 
+    res.render('admin/dispositivs/sensor', { sensors }); // caminho para ejs  originalmente index/// possivel sensor
 });
 
 router.get('/createSensor', function(req, res, next) {

@@ -56,6 +56,29 @@ router.get('/movies', function(req, res, next) {
     res.render('movies', { title: 'Meus vídeos', lista_projects: lprojects });
 });
 
+// função do gb  Obs: acredito que equivale a nossa função que mostra dispositivo 1 a 1 logo acima
+/*
+router.get('/:id', function(req, res, next) {
+    var id = req.params.id;
+    //var tempData = tempSensorsService.getTempData();
+    var actuadors = actuadorsService.getActuadors();
+    var actuador = actuadors.filter((actuador) => actuador.id == id)[0]
+    var index = actuadors.indexOf(actuador);
 
+    if (actuador.status < 1) {
+        actuador.status = 1;
+    } else {
+        actuador.status = 0;
+    }
+
+    actuadors.splice(index, 1, actuador);
+    actuadorsService.saveFileActuadors(actuadors);
+
+    // falta acertar o caminho de resposta logo abaixo !(res.render)
+    console.log(actuador);
+    res.render('index', { title: 'actuadors', actuadors, actuadors });
+})
+
+/// até aqui!*/
 
 module.exports = router;
